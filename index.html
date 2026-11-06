@@ -733,7 +733,7 @@ h3{font-size:16px;margin:0 0 6px}
 .up{color:var(--ok)!important}.down{color:var(--bad)!important}
 .src{font-size:11.5px;color:var(--marco);font-family:var(--mono)}
 .note{font-size:12.5px;color:var(--muted);border-left:3px solid var(--sol);padding:6px 10px;background:#FFF9EC;border-radius:0 8px 8px 0;margin-top:10px}
-.warn{border-left-color:var(--bad);background:#FBEDEA}
+.warn{border-left-color:var(--silicio);background:#E3EAF5}
 .chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:3px 9px;border-radius:999px;background:var(--soft);color:var(--navy);font-weight:600}
 .chip i{width:9px;height:9px;border-radius:50%;display:inline-block}
 .seg{display:inline-flex;flex-wrap:wrap;background:var(--soft);border-radius:10px;padding:3px;gap:2px}
@@ -760,6 +760,16 @@ h3{font-size:16px;margin:0 0 6px}
 .cls ul{margin:6px 0 0;padding-left:18px;font-size:13.5px}
 .cls li{margin:3px 0}
 .venn{display:flex;justify-content:center}
+.fam td,.fam th{font-size:13px}.fam td.n{text-align:left}.fam tbody th{width:180px;color:var(--navy)}
+.rk{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:6px}
+.rk .src2{border-radius:10px;padding:10px 8px;text-align:center;font-size:12.5px;font-weight:600;color:#fff}
+.rk .common{grid-column:1/-1;background:var(--navy);color:var(--papel);border-radius:10px;padding:10px;text-align:center;font-family:var(--mono);font-size:12.5px}
+.rk .arr{grid-column:1/-1;text-align:center;color:var(--sol);font-weight:800;line-height:1}
+.myth{display:flex;flex-direction:column;gap:8px}
+.myth details{border:1px solid var(--line);border-radius:10px;padding:8px 12px;background:#FBFAF6}
+.myth summary{cursor:pointer;font-weight:600;font-size:13.5px}
+.myth summary::marker{color:var(--sol)}
+.myth p{margin:6px 0 0;font-size:13px}
 /* clasificador */
 .deck{display:flex;flex-wrap:wrap;gap:8px;min-height:60px}
 .cardx{background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:8px 10px;font-size:13px;font-weight:600;cursor:grab;user-select:none;display:flex;flex-direction:column;gap:2px;max-width:220px;transition:transform .1s,box-shadow .1s}
@@ -856,6 +866,22 @@ ul.ass{font-size:13px;color:var(--muted);padding-left:18px;margin:6px 0}
 .hc .hs{margin-top:auto;padding:8px 16px 12px;border-top:1px solid var(--line);font-size:11px;font-family:var(--mono);color:var(--marco)}
 .tg.recursos{background:#FFF1D3;color:#7A5208}.tg.generacion{background:#E3EAF5;color:var(--navy)}.tg.transmision{background:#F1E6DA;color:#6E4318}.tg.distribucion{background:#E4F1EE;color:#245B53}
 .hnum{position:absolute;right:14px;top:12px;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.qidx{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 8px}
+.qidx a{font-size:12.5px;text-decoration:none;color:var(--navy);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-weight:600}
+.qidx a:hover{border-color:var(--sol);background:#FFF6DF}
+[id^="s0-"],[id^="s4-"],#hgrid,#repgrid{scroll-margin-top:120px}
+.modnav{display:flex;justify-content:space-between;gap:10px;margin-top:28px;flex-wrap:wrap}
+.modnav button{border:1.5px solid var(--navy);background:var(--card);color:var(--navy);border-radius:12px;padding:10px 16px;font-weight:700;cursor:pointer}
+.modnav button.next{background:var(--navy);color:#fff}
+.modnav button:hover{border-color:var(--sol)}
+#toTop{position:fixed;right:18px;bottom:18px;z-index:1500;width:44px;height:44px;border-radius:50%;border:0;background:var(--sol);color:var(--navy-d);font-size:20px;font-weight:800;box-shadow:var(--sh);cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s}
+#toTop.on{opacity:1;pointer-events:auto}
+#hSearch{flex:1;min-width:220px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:#fff}
+input[aria-invalid="true"]{border-color:#B3402A!important;background:#FBEDEA}
+.hc{transition:transform .15s,box-shadow .15s}.hc:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(13,42,82,.13)}
+.hc .why{margin:2px 16px 8px;font-size:12.5px;background:#FFF6DF;border-radius:8px;padding:6px 9px;color:#5A3E06}
+.hc .why b{color:var(--navy)}
+footer .flogo{display:flex;align-items:center;gap:10px}
 /* timeline */
 .tl{display:flex;gap:8px;overflow-x:auto;padding:8px 2px 14px;scroll-snap-type:x mandatory}
 .tl button{flex:0 0 150px;scroll-snap-align:start;text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:10px;cursor:pointer;position:relative}
@@ -920,6 +946,7 @@ footer .in{max-width:1280px;margin:0 auto;padding:22px 20px;display:flex;flex-wr
   <div class="hero"><div>
     <div class="eyebrow">Módulo 0 · Recursos energéticos</div>
     <h1>¿De dónde sale la energía que se vuelve electricidad?</h1>
+    <nav class="qidx" aria-label="Secciones del módulo"><a href="#s0-1">1 Clasificación</a><a href="#s0-2">2 Clasificador</a><a href="#s0-3">3 Diagramas</a><a href="#s0-4">4 Matriz</a><a href="#s0-5">5 Comparador</a><a href="#s0-6">6 Indicadores</a><a href="#s0-7">7 Reflexión</a></nav>
     <p class="lede">Un <span data-tip="recurso">recurso energético</span> no es lo mismo que una <span data-tip="tecnologia">tecnología de generación</span>. Sigue la cadena completa y pasa el cursor (o toca) sobre las palabras subrayadas para ver su definición.</p>
   </div></div>
 
@@ -931,7 +958,7 @@ footer .in{max-width:1280px;margin:0 auto;padding:22px 20px;display:flex;flex-wr
     <div class="lk"><span class="ix">5</span><b data-tip="electricidad">Electricidad</b><span>kWh entregados a la red</span></div>
   </div>
 
-  <h2 class="block">1 · Clasificación de recursos</h2>
+  <h2 class="block" id="s0-1">1 · Clasificación de recursos</h2>
   <p class="sub">Tres familias. Una misma tecnología puede usar distintos combustibles según su diseño.</p>
   <div class="grid g3">
     <div class="card cls" style="border-top-color:#4F6075">
@@ -966,6 +993,36 @@ footer .in{max-width:1280px;margin:0 auto;padding:22px 20px;display:flex;flex-wr
     </div>
   </div>
 
+  <div class="card block">
+    <h3>Las tres familias de un vistazo</h3>
+    <p class="sub">Compara fila por fila. Las cifras de CFE son de su generación bruta 2024; las nacionales, del SEN 2022.</p>
+    <div class="tw"><table class="t fam">
+      <thead><tr><th></th><th><span class="dot" style="background:#4F6075"></span>Fósiles</th><th><span class="dot" style="background:#6B4FA0"></span>Nucleares</th><th><span class="dot" style="background:#F7B32B"></span>Renovables</th></tr></thead>
+      <tbody>
+        <tr><th>¿De dónde viene la energía?</th><td>Restos orgánicos enterrados hace millones de años (energía química)</td><td>Núcleos de uranio-235 (energía nuclear)</td><td>Sol, viento, agua, calor de la Tierra, biomasa</td></tr>
+        <tr><th>¿Se agota?</th><td class="no">Sí, a escala humana</td><td class="no">Sí: el uranio es un mineral finito</td><td class="yes">No: se regenera de forma natural</td></tr>
+        <tr><th>¿Emite CO₂ al generar?</th><td class="no">Sí (combustión)</td><td class="yes">No (fisión, sin combustión)</td><td class="yes">No (la biomasa emite, pero recicla carbono)</td></tr>
+        <tr><th>¿Es <span data-tip="limpia">energía limpia</span>?</th><td class="no">No (salvo cogeneración eficiente)</td><td class="yes">Sí</td><td class="yes">Sí</td></tr>
+        <tr><th>¿Cómo mueve al generador?</th><td>Calor → vapor o gases → turbina</td><td>Calor → vapor → turbina</td><td>Agua, viento o vapor → turbina; la solar FV no usa turbina</td></tr>
+        <tr><th>¿Se puede controlar cuándo genera?</th><td>Sí (<span data-tip="fplanta">despachable</span>)</td><td>Sí, ideal para carga base</td><td>Hidro y geotermia sí; sol y viento dependen del clima</td></tr>
+        <tr><th>Peso en CFE 2024</th><td class="n">74.7%</td><td class="n">8.0%</td><td class="n">17.3%</td></tr>
+        <tr><th>Peso en el país 2022</th><td class="n">68.8%</td><td class="n">3.1%</td><td class="n">24.3% (+3.7% otras limpias)</td></tr>
+      </tbody></table></div>
+    <div class="src">Cálculos con CFE24 p. 26 y PRODESEN Cap. 4 p. 59 · clasificación de energías limpias: LIE 2014, art. 3</div>
+  </div>
+
+  <div class="grid g2 block">
+    <div class="card">
+      <h3>Misma turbina, distinto calor</h3>
+      <p class="sub">El <span data-tip="rankine">ciclo Rankine</span> (vapor → turbina → generador) es igual en cuatro tecnologías. Lo que cambia es <b>quién calienta el agua</b>, y eso define la familia.</p>
+      <div class="rk" id="rankine"></div>
+    </div>
+    <div class="card">
+      <h3>Mitos y realidades</h3>
+      <div class="myth" id="myths"></div>
+    </div>
+  </div>
+
   <div class="grid g2 block">
     <div class="card">
       <h3>Renovable ≠ limpia</h3>
@@ -974,7 +1031,7 @@ footer .in{max-width:1280px;margin:0 auto;padding:22px 20px;display:flex;flex-wr
       <div class="note">La <b>nuclear es limpia, pero no renovable</b>: el uranio se agota, pero la fisión no emite CO₂ al generar. La <b>cogeneración eficiente</b> usa gas y aun así la regulación puede considerarla limpia. Fuente: LIE 2014, art. 3 (definición de energías limpias).</div>
     </div>
     <div class="card">
-      <h3>2 · Clasificador interactivo</h3>
+      <h3 id="s0-2">2 · Clasificador interactivo</h3>
       <p class="sub">Arrastra cada tarjeta a su categoría, o tócala y luego toca el botón de la categoría (accesible con teclado y en celular).</p>
       <div class="toolbar"><span>Aciertos: <span class="score" id="clsScore">0 / 18</span></span><span>Errores: <span class="score" id="clsErr">0</span></span><button class="chip" id="clsReset" style="border:0;cursor:pointer">↺ Reiniciar</button></div>
       <div class="deck" id="deck" aria-label="Tarjetas por clasificar"></div>
@@ -983,19 +1040,20 @@ footer .in{max-width:1280px;margin:0 auto;padding:22px 20px;display:flex;flex-wr
   <div class="bins" id="bins"></div>
   <div class="fbk" id="clsFb" aria-live="polite">Selecciona una tarjeta para empezar.</div>
 
-  <h2 class="block">3 · Diagramas de conversión de energía</h2>
+  <h2 class="block" id="s0-3">3 · Diagramas de conversión de energía</h2>
   <p class="sub">Elige un recurso y toca cada etapa para ver qué transformación ocurre.</p>
   <div class="card">
     <div class="toolbar"><div class="seg" id="chainSel"></div></div>
     <div class="flow" id="flow"></div>
     <div class="stinfo" id="stinfo" aria-live="polite"></div>
+    <div class="note" id="physnote"></div>
   </div>
 
-  <h2 class="block">4 · Matriz energética por recurso</h2>
+  <h2 class="block" id="s0-4">4 · Matriz energética por recurso</h2>
   <p class="sub">Distingue datos <b>de CFE</b> (sus centrales propias) de datos <b>nacionales</b> (todo el SEN, incluye privados).</p>
   <div class="grid g2">
     <div class="card">
-      <div class="toolbar"><b>Generación de CFE por recurso</b><div class="seg" id="m0Unit"><button aria-pressed="true" data-u="gwh">GWh</button><button aria-pressed="false" data-u="pct">%</button></div></div>
+      <div class="toolbar"><b>Generación de CFE por recurso</b><div class="seg" id="m0Unit"><button aria-pressed="false" data-u="gwh">GWh</button><button aria-pressed="true" data-u="pct">%</button></div></div>
       <div class="chart"><canvas id="cResCFE"></canvas></div>
       <div class="note">Fósil = ciclo combinado + vapor + carbón + turbogás + diésel + turbojet. En 2023 la participación renovable cayó de 27.4% a 16.1% porque la generación hidroeléctrica bajó 42.6% por la temporada de estiaje (CFE23 p. 18).</div>
       <div class="src">Cálculo con CFE23 p. 300 (2022) y CFE24 p. 26 (2023-2024)</div>
@@ -1018,7 +1076,7 @@ footer .in{max-width:1280px;margin:0 auto;padding:22px 20px;display:flex;flex-wr
     </div>
   </div>
 
-  <h2 class="block">5 · Comparador energético</h2>
+  <h2 class="block" id="s0-5">5 · Comparador energético</h2>
   <p class="sub">Selecciona dos o más recursos. Las emisiones se muestran en dos escalas: <b>directas</b> (solo al generar) y de <b>ciclo de vida</b> (incluye construcción, minería y combustible).</p>
   <div class="card">
     <div class="picks" id="picks"></div>
@@ -1028,10 +1086,10 @@ footer .in{max-width:1280px;margin:0 auto;padding:22px 20px;display:flex;flex-wr
     </div>
   </div>
 
-  <h2 class="block">6 · Indicadores de conciencia energética</h2>
+  <h2 class="block" id="s0-6">6 · Indicadores de conciencia energética</h2>
   <div class="grid g3" id="gauges"></div>
 
-  <h2 class="block">7 · Actividad de reflexión</h2>
+  <h2 class="block" id="s0-7">7 · Actividad de reflexión</h2>
   <p class="sub">Interpreta las gráficas de este módulo. No son preguntas de memoria.</p>
   <div class="card"><div id="quiz"></div><div class="toolbar"><span>Puntaje: <span class="score" id="qScore">0 / 5</span></span></div></div>
 </section>
@@ -1114,8 +1172,10 @@ footer .in{max-width:1280px;margin:0 auto;padding:22px 20px;display:flex;flex-wr
       </div>
       <div>
         <div class="chart lg"><canvas id="cSim"></canvas></div>
+        <div class="chart sm" style="margin-top:10px"><canvas id="cSim2"></canvas></div>
       </div>
     </div>
+    <div class="note" id="simExplain" aria-live="polite"></div>
     <h3 style="margin-top:12px">Supuestos y limitaciones del modelo</h3>
     <ul class="ass">
       <li>Sistema trifásico balanceado; R es la resistencia equivalente por fase de toda la línea (R = ρ·L/A depende del conductor y la longitud).</li>
@@ -1169,6 +1229,7 @@ footer .in{max-width:1280px;margin:0 auto;padding:22px 20px;display:flex;flex-wr
           <button data-vp="13.2" data-a="55" data-s="75">Poste 13.2 kV→240 V</button>
           <button data-vp="13.2" data-a="110" data-s="25">Poste 13.2 kV→120 V</button></div></div>
         <div class="out" id="tOut"></div>
+        <div class="note" id="tWarn" aria-live="polite"></div>
         <div class="formula" style="margin-top:10px"><b>Vp / Vs = Np / Ns</b> &nbsp;&nbsp; <b>Vp · Ip = Vs · Is = S</b><br><span id="tCalc"></span></div>
       </div>
       <div><div class="chart lg"><canvas id="cTr"></canvas></div></div>
@@ -1189,8 +1250,9 @@ footer .in{max-width:1280px;margin:0 auto;padding:22px 20px;display:flex;flex-wr
     <div class="eyebrow">Módulo 4 · ¿Sabías que?</div>
     <h1>20 hallazgos del sistema eléctrico mexicano</h1>
     <p class="lede">Cada tarjeta trae un indicador verificable, una visualización, una explicación breve y su fuente con año y página.</p>
+    <nav class="qidx" aria-label="Secciones del módulo"><a href="#hgrid">20 hallazgos</a><a href="#s4-tl">Línea de tiempo</a><a href="#s4-est">Cambios estructurales</a><a href="#repgrid">Repercusiones</a><a href="#s4-hec">Hechos y opiniones</a></nav>
   </div></div>
-  <div class="filters" id="hFilt"></div>
+  <div class="filters"><div id="hFilt"></div><input type="search" id="hSearch" placeholder="Buscar hallazgo (ej. nuclear, 400 kV, hogares)…" aria-label="Buscar hallazgo"></div>
   <div class="hgrid" id="hgrid"></div>
 
   <div class="hero" style="margin-top:34px"><div>
@@ -1200,14 +1262,14 @@ footer .in{max-width:1280px;margin:0 auto;padding:22px 20px;display:flex;flex-wr
   </div></div>
 
   <div class="card">
-    <h2>1 · Línea de tiempo</h2>
-    <div class="eras"><span class="chip"><i style="background:#9DB6D8"></i>Antes de 2013</span><span class="chip"><i style="background:#F7B32B"></i>Reforma 2013 y leyes 2014</span><span class="chip"><i style="background:#B3402A"></i>Cambios 2018-2025</span></div>
+    <h2 id="s4-tl">1 · Línea de tiempo</h2>
+    <div class="eras"><span class="chip"><i style="background:#9DB6D8"></i>Antes de 2013</span><span class="chip"><i style="background:#F7B32B"></i>Reforma 2013 y leyes 2014</span><span class="chip"><i style="background:#1C4A85"></i>Cambios 2018-2025</span></div>
     <div class="tl" id="tl"></div>
     <div class="tldet" id="tldet" aria-live="polite"></div>
   </div>
 
   <div class="card block">
-    <h2>2 · Cambios estructurales</h2>
+    <h2 id="s4-est">2 · Cambios estructurales</h2>
     <p class="sub">Cómo se organizó el sector en cada etapa. La legislación vigente (2025) difiere de la aprobada en 2013-2014.</p>
     <div class="org">
       <div class="col"><h4>Antes de 2013</h4>
@@ -1220,10 +1282,10 @@ footer .in{max-width:1280px;margin:0 auto;padding:22px 20px;display:flex;flex-wr
         <div class="box" style="background:#FFF1D3">Se crea el <span data-tip="mem">Mercado Eléctrico Mayorista</span> (inicia en 2016)</div>
         <div class="box" style="background:#FFF1D3"><span data-tip="cenace">CENACE</span> independiente: control operativo y operación del mercado</div>
         <div class="box" style="background:#E3EAF5">Transmisión y distribución: siguen reservadas al Estado</div></div>
-      <div class="col" style="border-color:#B3402A"><h4>Reforma 2024 · leyes 2025</h4>
-        <div class="box" style="background:#FBEDEA">CFE: "empresa pública del Estado", sin fines de lucro (DOF 31-10-2024)</div>
-        <div class="box" style="background:#FBEDEA">Prevalencia: el Estado debe inyectar al menos 54% de la energía (promedio anual)</div>
-        <div class="box" style="background:#FBEDEA">Se reintegra CFE (desaparecen las subsidiarias); se preserva el MEM con nuevas bases</div>
+      <div class="col" style="border-color:#1C4A85"><h4>Reforma 2024 · leyes 2025</h4>
+        <div class="box" style="background:#DCE6F2">CFE: "empresa pública del Estado", sin fines de lucro (DOF 31-10-2024)</div>
+        <div class="box" style="background:#DCE6F2">Prevalencia: el Estado debe inyectar al menos 54% de la energía (promedio anual)</div>
+        <div class="box" style="background:#DCE6F2">Se reintegra CFE (desaparecen las subsidiarias); se preserva el MEM con nuevas bases</div>
         <div class="box" style="background:#E3EAF5">Transmisión y distribución: siguen siendo del Estado</div></div>
     </div>
     <div class="src" style="margin-top:8px">DOF 20-12-2013 · LIE (DOF 11-08-2014) · LSE y Ley de la EPE CFE (DOF 18-03-2025) · CFE24 pp. 11 y 25 · IMCO (2025)</div>
@@ -1233,7 +1295,7 @@ footer .in{max-width:1280px;margin:0 auto;padding:22px 20px;display:flex;flex-wr
   <div class="hgrid" id="repgrid"></div>
 
   <div class="card block">
-    <h2>4 · Hechos, cifras e interpretaciones</h2>
+    <h2 id="s4-hec">4 · Hechos, cifras e interpretaciones</h2>
     <div class="facts">
       <div class="f"><h4 style="color:var(--navy)">Hechos legales</h4><ul>
         <li>Reforma constitucional publicada el 20-dic-2013 (arts. 25, 27, 28).</li>
@@ -1243,7 +1305,7 @@ footer .in{max-width:1280px;margin:0 auto;padding:22px 20px;display:flex;flex-wr
         <li>Participación de CFE en la generación: 53% (2018) → 41.1% (2022) → 42.3% (2024).</li>
         <li>Generación limpia nacional 2022: 31.2%.</li>
         <li>Subastas 2016-2017: 7,451 MW limpios; precio de la tercera: 20.57 USD/MWh.</li></ul></div>
-      <div class="f"><h4 style="color:#B3402A">Interpretaciones (opiniones)</h4><ul>
+      <div class="f"><h4 style="color:var(--marco)">Interpretaciones (opiniones)</h4><ul>
         <li><b>Defensores de la reforma 2013:</b> la competencia y las subastas atrajeron inversión y bajaron los precios de la energía limpia.</li>
         <li><b>CFE (informe 2024) y el gobierno 2018-2024:</b> la reforma debilitó a CFE, creó un "mercado paralelo" de autoabasto y privilegió a privados.</li>
         <li>Los cambios estadísticos también dependen de la demanda, del clima y de los precios del gas, no solo de la ley.</li></ul></div>
@@ -1277,6 +1339,21 @@ footer .in{max-width:1280px;margin:0 auto;padding:22px 20px;display:flex;flex-wr
       <li>SHCP, Cuenta Pública 2024 (CFE como empresa pública del Estado desde el 1-nov-2024).</li>
     </ol>
     <h3>Cartografía</h3><p style="font-size:13px">Límites estatales: Natural Earth (dominio público), vía el paquete <span class="mono">datamaps</span> (MIT). Coordenadas de centrales: aproximadas.</p></div>
+    <div class="card span2"><h3>Registro de iteraciones de mejora con IA</h3>
+      <p class="sub">Versión 1: los cinco módulos completos. Después se aplicaron 10 rondas de mejora; cada una se probó con clics automáticos en los 116 controles y en celular (390 px).</p>
+      <ol style="font-size:13.5px;columns:2;column-gap:28px">
+        <li><b>Recursos:</b> tabla comparativa de las tres familias, diagrama "misma turbina, distinto calor" y sección de mitos y realidades.</li>
+        <li><b>Clasificador:</b> retroalimentación que explica por qué la respuesta es correcta o incorrecta, reintento con la misma tarjeta, contador por categoría y resumen final de errores.</li>
+        <li><b>Diagramas de conversión:</b> nota física por recurso (segunda ley, E = mc², banda prohibida del silicio, límite de Betz, P = ρgQh); se corrigió una etapa eólica duplicada.</li>
+        <li><b>Gráficas de tres años:</b> vista en porcentaje por defecto, etiquetas dentro de cada segmento y años anotados (2022 lluvioso, 2023 estiaje).</li>
+        <li><b>Experiencia de usuario:</b> índice rápido de secciones, botones de módulo anterior/siguiente, botón "volver arriba", navegación de pestañas con flechas y buscador de hallazgos.</li>
+        <li><b>Transmisión:</b> comparación en vivo a 115, 230 y 400 kV con texto que explica la ley P<sub>p</sub> ∝ 1/V², más potencia que llega, eficiencia y pérdida anual.</li>
+        <li><b>Identidad visual:</b> se reemplazaron colores ajenos a la paleta Photon Labs en la línea de tiempo y en los avisos; logo también en el pie de página.</li>
+        <li><b>Simuladores:</b> las cajas numéricas ya no corrigen el valor mientras se escribe (antes saltaban al mínimo); avisos de valores fuera de rango y de tensiones no comerciales.</li>
+        <li><b>¿Sabías que?:</b> "¿Por qué importa?" en los 20 hallazgos, animación de la cifra principal y búsqueda por palabra.</li>
+        <li><b>Auditoría final:</b> 0 errores de programación en los 6 apartados; todos los controles responden; se unificó el redondeo (75.7%) y se quitaron afirmaciones sin fuente documental.</li>
+      </ol>
+    </div>
     <div class="card span2"><h3>Limitaciones conocidas</h3><ul style="font-size:13.5px">
       <li>CFE23 tiene diferencias internas: el texto (p. 17) dice que en 2023 se generaron 9,440 GWh más que en 2022, pero 150,462 − 141,343 = 9,119 GWh; la tabla de variación por tecnología (p. 301) tampoco cuadra con los valores anuales. Se usaron los valores anuales. La generación neta 2022 es 136,972 GWh en CFE23 (p. 19) y 137,133 GWh en CFE24 (p. 28).</li>
       <li>No hay generación nacional por tecnología para 2023-2024 en los documentos usados.</li>
@@ -1288,8 +1365,9 @@ footer .in{max-width:1280px;margin:0 auto;padding:22px 20px;display:flex;flex-wr
 </section>
 
 </main>
+<button id="toTop" aria-label="Volver arriba">↑</button>
 <footer><div class="in">
-  <div><b style="color:#fff">Photon Labs · A01744520</b> — Germán Valenzuela Ruy Sánchez · TE1020 Análisis de Circuitos Eléctricos · Tec de Monterrey</div>
+  <div class="flogo"><svg width="44" height="44" viewBox="0 0 512 512" role="img" aria-label="Logo Photon Labs A01744520"><rect width="512" height="512" rx="112" fill="#0D2A52" stroke="#3A64A0" stroke-width="10"/><circle cx="386" cy="112" r="56" fill="#F7B32B"/><g stroke="#F7B32B" stroke-width="12" stroke-linecap="round"><line x1="460" y1="112" x2="486" y2="112"/><line x1="438.3" y1="164.3" x2="456.7" y2="182.7"/><line x1="386" y1="184" x2="386" y2="194"/><line x1="333.7" y1="164.3" x2="315.3" y2="182.7"/><line x1="312" y1="112" x2="286" y2="112"/><line x1="333.7" y1="59.7" x2="315.3" y2="41.3"/><line x1="386" y1="38" x2="386" y2="12"/><line x1="438.3" y1="59.7" x2="456.7" y2="41.3"/></g><rect x="250" y="366" width="12" height="26" fill="#3A64A0"/><rect x="206" y="388" width="100" height="10" rx="5" fill="#3A64A0"/><polygon points="124,206 396,206 452,368 60,368" fill="#3A64A0" stroke="#3A64A0" stroke-width="8" stroke-linejoin="round"/><g fill="#1C4A85"><polygon points="131.0,218.2 192.4,218.2 183.8,260.8 115.5,260.8"/><polygon points="196.3,218.2 257.7,218.2 256.5,260.8 188.2,260.8"/><polygon points="261.7,218.2 323.1,218.2 329.1,260.8 260.8,260.8"/><polygon points="327.0,218.2 388.4,218.2 401.8,260.8 333.5,260.8"/><polygon points="113.7,265.7 182.8,265.7 174.2,308.3 98.2,308.3"/><polygon points="187.2,265.7 256.3,265.7 255.0,308.3 179.0,308.3"/><polygon points="260.7,265.7 329.8,265.7 335.9,308.3 259.9,308.3"/><polygon points="334.3,265.7 403.3,265.7 416.8,308.3 340.8,308.3"/><polygon points="96.4,313.2 173.2,313.2 164.6,355.8 80.9,355.8"/><polygon points="178.1,313.2 254.9,313.2 253.6,355.8 169.9,355.8"/><polygon points="259.8,313.2 336.6,313.2 342.7,355.8 259.0,355.8"/><polygon points="341.5,313.2 418.3,313.2 431.7,355.8 348.0,355.8"/></g><g stroke="#9DB6D8" stroke-width="2.5" opacity=".6"><line x1="151.4" y1="215.7" x2="106.8" y2="358.3"/><line x1="173.4" y1="215.7" x2="137.3" y2="358.3"/><line x1="216.3" y1="215.7" x2="196.3" y2="358.3"/><line x1="238.3" y1="215.7" x2="226.7" y2="358.3"/><line x1="281.2" y1="215.7" x2="285.8" y2="358.3"/><line x1="303.3" y1="215.7" x2="316.2" y2="358.3"/><line x1="346.1" y1="215.7" x2="375.2" y2="358.3"/><line x1="368.2" y1="215.7" x2="405.6" y2="358.3"/></g><text x="256" y="466" text-anchor="middle" font-family="JetBrains Mono, ui-monospace, monospace" font-size="62" font-weight="800" letter-spacing="1"><tspan fill="#A9BEDB">A01</tspan><tspan fill="#F4F1EA">744520</tspan></text></svg>  <span><b style="color:#fff">Photon Labs · A01744520</b> — Germán Valenzuela Ruy Sánchez · TE1020 Análisis de Circuitos Eléctricos · Tec de Monterrey</span></div>
   <div>Datos: CFE, SENER (PRODESEN), IPCC. "Dato no disponible" = no aparece en los documentos utilizados. Aplicación académica, no oficial.</div>
 </div></footer>
 <script>/*!
@@ -1609,35 +1687,35 @@ const BINS = [
 
 /* Diagramas de conversión */
 const CHAINS = [
-  { k: 'gas', n: 'Gas natural', tech: 'cc', steps: [
+  { k: 'gas', n: 'Gas natural', tech: 'cc', phys: 'La energía se conserva: lo que no sale como electricidad sale como calor al ambiente (segunda ley de la termodinámica). La eficiencia térmica neta promedio de las centrales térmicas de CFE fue de 34.5% en 2024 (CFE24 p. 28). El ciclo combinado aprovecha mejor el combustible porque reutiliza el calor de los gases de escape.', steps: [
     ['Gas natural', 'Energía química', 'Gas metano llega por gasoducto. Su energía está en los enlaces químicos.'],
     ['Combustión', 'Química → térmica', 'El gas se quema con aire comprimido en la cámara de combustión; los gases alcanzan temperaturas muy altas.'],
     ['Turbinas (gas + vapor)', 'Térmica → mecánica', 'Los gases mueven la turbina de gas (ciclo Brayton). Su calor de escape produce vapor que mueve una turbina de vapor (ciclo Rankine). Así se aprovecha dos veces el combustible.'],
     ['Generador', 'Mecánica → eléctrica', 'El eje gira un rotor magnético dentro de bobinas: la inducción electromagnética (ley de Faraday) produce corriente alterna.'],
     ['Electricidad', 'Energía eléctrica', 'Se eleva la tensión en la subestación y se envía a la red de transmisión.']] },
-  { k: 'carbon', n: 'Carbón', tech: 'car', steps: [
+  { k: 'carbon', n: 'Carbón', tech: 'car', phys: 'En el ciclo Rankine, una parte del calor siempre se rechaza en el condensador; ninguna máquina térmica convierte todo el calor en trabajo (segunda ley). Por eso cada central térmica necesita agua de enfriamiento. Eficiencia térmica neta promedio de CFE: 34.5% (CFE24 p. 28).', steps: [
     ['Carbón', 'Energía química', 'El carbón se muele hasta un polvo fino para que arda mejor.'],
     ['Combustión', 'Química → térmica', 'Se quema en la caldera; el calor se transfiere al agua de los tubos.'],
     ['Vapor', 'Térmica (vapor a presión)', 'El agua se evapora a alta presión y temperatura (ciclo Rankine).'],
     ['Turbina', 'Térmica → mecánica', 'El vapor se expande y hace girar la turbina; luego se condensa y regresa a la caldera.'],
     ['Electricidad', 'Mecánica → eléctrica', 'El generador acoplado a la turbina produce corriente alterna.']] },
-  { k: 'uranio', n: 'Uranio', tech: 'nuc', steps: [
+  { k: 'uranio', n: 'Uranio', tech: 'nuc', phys: 'La fisión convierte una pequeñísima parte de la masa en energía (E = m·c²). Después, el calor se transforma igual que en una central de carbón: vapor → turbina → generador → condensador. No hay combustión, por eso no se emite CO₂ al generar.', steps: [
     ['Uranio', 'Energía nuclear', 'Pastillas de dióxido de uranio enriquecido forman los ensambles de combustible.'],
     ['Fisión', 'Nuclear → térmica', 'Un neutrón divide un núcleo de U-235; se liberan energía y más neutrones (reacción en cadena controlada).'],
     ['Calor', 'Térmica', 'El calor de la fisión calienta el agua del reactor. En Laguna Verde (reactor de agua en ebullición) el agua hierve dentro del reactor.'],
     ['Vapor', 'Térmica → mecánica', 'El vapor mueve la turbina (ciclo Rankine), igual que en una central de carbón, pero sin combustión.'],
     ['Electricidad', 'Mecánica → eléctrica', 'El generador produce electricidad. Laguna Verde entregó 11,978 GWh netos en 2024 (CFE24 p. 65).']] },
-  { k: 'solar', n: 'Radiación solar', tech: 'sol', steps: [
+  { k: 'solar', n: 'Radiación solar', tech: 'sol', phys: 'Solo los fotones con energía mayor que la banda prohibida del silicio (≈1.1 eV) liberan electrones; el exceso y los fotones de menor energía se vuelven calor. Es la única de estas tecnologías sin turbina ni generador giratorio: produce corriente directa y requiere inversor.', steps: [
     ['Radiación solar', 'Energía electromagnética', 'Los fotones de la luz solar llegan al panel.'],
     ['Efecto fotovoltaico', 'Luz → eléctrica (CD)', 'En la unión p-n de la celda de silicio, cada fotón con energía suficiente libera un electrón y crea corriente directa. No hay turbina ni generador.'],
     ['Inversor', 'CD → CA', 'Un inversor electrónico convierte la corriente directa en alterna a 60 Hz.'],
     ['Electricidad', 'Energía eléctrica', 'Un transformador eleva la tensión para conectarse a la red. Ej.: Puerto Peñasco, 300 MW de la Sec. II (CFE24 p. 22).']] },
-  { k: 'viento', n: 'Viento', tech: 'eol', steps: [
+  { k: 'viento', n: 'Viento', tech: 'eol', phys: 'Potencia del viento: P = ½·ρ·A·v³ (densidad del aire × área barrida × velocidad al cubo). Límite de Betz: ningún aerogenerador puede extraer más de 16/27 ≈ 59.3% de esa energía, porque el aire debe seguir moviéndose al salir.', steps: [
     ['Viento', 'Energía cinética del aire', 'La potencia del viento crece con el cubo de su velocidad (P ∝ v³).'],
-    ['Energía cinética', 'Cinética → mecánica', 'Las aspas transforman parte de esa energía en rotación lenta del rotor.'],
+    ['Rotor (aspas)', 'Cinética → mecánica', 'Las aspas, con perfil aerodinámico, transforman parte de la energía del viento en rotación lenta del rotor.'],
     ['Aerogenerador', 'Mecánica → eléctrica', 'Una caja multiplicadora (o un generador de imanes) produce electricidad en la góndola.'],
     ['Electricidad', 'Energía eléctrica', 'Se eleva la tensión y se inyecta a la red. Ej.: eólicas del Istmo de Tehuantepec, Oaxaca (CFE24 p. 56).']] },
-  { k: 'agua', n: 'Agua', tech: 'hid', steps: [
+  { k: 'agua', n: 'Agua', tech: 'hid', phys: 'Potencia hidráulica disponible: P = ρ·g·Q·h (densidad × gravedad × caudal × altura de caída). Si baja el caudal por falta de lluvia, baja la potencia: la hidroeléctrica de CFE cayó 42.6% en 2023 (CFE23 pp. 18 y 300).', steps: [
     ['Agua', 'Energía potencial', 'El agua almacenada a cierta altura en una presa tiene energía potencial (E = m·g·h).'],
     ['Caída / flujo', 'Potencial → cinética', 'Al bajar por la tubería forzada, el agua gana velocidad.'],
     ['Turbina hidráulica', 'Cinética → mecánica', 'El chorro hace girar la turbina (Francis, Kaplan o Pelton).'],
@@ -1665,7 +1743,7 @@ const QUIZ = [
   { q: 'Laguna Verde tiene 1,608 MW (3.6% de la capacidad de CFE) pero produjo 8.0% de la electricidad de CFE en 2024. ¿Por qué?',
     o: ['Porque usa más combustible', 'Porque opera casi todo el año a plena carga (disponibilidad de 90.83%)', 'Porque tiene más unidades', 'Es un error de los datos'], a: 1,
     fb: 'Una central de carga base opera casi continuamente. Su factor de planta (≈87%, cálculo con CFE24 pp. 64-65) es mucho mayor que el promedio de CFE (38.5%, CFE24 p. 28).' },
-  { q: 'La participación fósil de CFE pasó de 64.9% (2022) a 75.6% (2023). Según la gráfica, ¿qué lo explica mejor?',
+  { q: 'La participación fósil de CFE pasó de 64.9% (2022) a 75.7% (2023). Según la gráfica, ¿qué lo explica mejor?',
     o: ['CFE construyó muchas carboeléctricas nuevas', 'La hidroeléctrica cayó de 34,110 a 19,568 GWh por el estiaje y ese hueco se cubrió con fósiles', 'Laguna Verde dejó de operar', 'Bajó la demanda de electricidad'], a: 1,
     fb: 'La capacidad fósil casi no cambió (CFE23 p. 16), pero la falta de lluvia redujo la hidro y el ciclo combinado y el vapor convencional subieron. Laguna Verde incluso generó más en 2023 (12,386 vs. 10,850 GWh).' },
   { q: 'Según el IPCC, ¿cuántas toneladas de CO₂e se evitarían, aproximadamente, si 1 TWh hecho con carbón se produjera con eólica (ciclo de vida)?',
@@ -1681,67 +1759,67 @@ const HALL = [
   /* ---- Recursos energéticos ---- */
   { tema: 'recursos', t: '¿Qué porcentaje de la electricidad se genera con combustibles fósiles?', big: '68.8%', u: 'de la generación nacional 2022',
     viz: { type: 'doughnut', labels: ['Fósil', 'Limpia'], data: [68.8, 31.2], colors: ['#4F6075', '#F7B32B'] },
-    x: 'Mismo año, CFE: 64.9% fósil en 2022, menos que el país. Pero en 2024 CFE llegó a 74.7% porque cayó su hidroeléctrica (cálculos con CFE23 p. 300 y CFE24 p. 26).', s: 'PRODESEN Cap. 4, 2023, p. 59 · CFE23 p. 300 · CFE24 p. 26' },
+    x: 'Mismo año, CFE: 64.9% fósil en 2022, menos que el país. Pero en 2024 CFE llegó a 74.7% porque cayó su hidroeléctrica (cálculos con CFE23 p. 300 y CFE24 p. 26).', w: 'La mayoría de la electricidad depende de combustibles que se agotan y emiten CO₂.', s: 'PRODESEN Cap. 4, 2023, p. 59 · CFE23 p. 300 · CFE24 p. 26' },
   { tema: 'recursos', t: '¿Cuánto CO₂e emite cada tecnología por kWh?', big: '75×', u: 'más emisiones de ciclo de vida del carbón que de la eólica',
     viz: { type: 'emis' },
-    x: 'Emisiones de ciclo de vida: incluyen construcción, minería y combustible. Emisiones directas: solo la chimenea. Solar, eólica, hidro y nuclear tienen emisiones directas de cero.', s: 'IPCC AR5 WGIII (2014), Anexo III, Tabla A.III.2' },
+    x: 'Emisiones de ciclo de vida: incluyen construcción, minería y combustible. Emisiones directas: solo la chimenea. Solar, eólica, hidro y nuclear tienen emisiones directas de cero.', w: 'Elegir tecnología cambia las emisiones hasta 75 veces por cada kWh que usas.', s: 'IPCC AR5 WGIII (2014), Anexo III, Tabla A.III.2' },
   { tema: 'recursos', t: '¿Por qué la nuclear es limpia, pero no renovable?', big: '31.6%', u: 'de la energía limpia de CFE en 2024 vino de Laguna Verde',
     viz: { type: 'matrix' },
-    x: 'El uranio es un recurso finito (no renovable). Pero la fisión no emite CO₂ al generar, y la LIE incluye a la nucleoeléctrica entre las energías limpias. 12,306.6 de 38,982.9 GWh limpios de CFE.', s: 'CFE24 p. 27 · LIE 2014, art. 3 (definición de energías limpias)' },
+    x: 'El uranio es un recurso finito (no renovable). Pero la fisión no emite CO₂ al generar, y la LIE incluye a la nucleoeléctrica entre las energías limpias. 12,306.6 de 38,982.9 GWh limpios de CFE.', w: 'Explica por qué una fuente puede ayudar a bajar emisiones aunque su combustible se agote.', s: 'CFE24 p. 27 · LIE 2014, art. 3 (definición de energías limpias)' },
   { tema: 'recursos', t: '¿Qué aportan sol, viento, agua y calor de la Tierra a las renovables?', big: '42.8%', u: 'de la generación renovable nacional 2022 fue hidráulica',
     viz: { type: 'bar2', labels: ['Hidráulica', 'Eólica', 'Solar FV', 'Geotérmica', 'Bioenergía'], a: [10.4, 6.0, 6.0, 1.3, 0.6], an: 'SEN 2022 (% del total)', b: [14.5, 0.05, 0.36, 2.4, 0], bn: 'CFE 2024 (% del total)' },
-    x: 'En el país, sol y viento ya igualaban 6% cada uno en 2022. En CFE casi todo lo renovable es hidroeléctrico (83.8%): la solar y eólica están principalmente en manos privadas.', s: 'PRODESEN Cap. 4, p. 59 · CFE24 p. 26 (cálculo)' },
+    x: 'En el país, sol y viento ya igualaban 6% cada uno en 2022. En CFE casi todo lo renovable es hidroeléctrico (83.8%): la solar y eólica están principalmente en manos privadas.', w: 'Las renovables de CFE dependen casi solo de la lluvia; las del país están más diversificadas.', s: 'PRODESEN Cap. 4, p. 59 · CFE24 p. 26 (cálculo)' },
   { tema: 'recursos', t: '¿Qué recursos dependen del clima y cuáles son controlables?', big: '87%', u: 'factor de planta nuclear vs. 10% eólica CFE (2024)',
     viz: { type: 'bar1', labels: ['Nuclear', 'Ciclo combinado', 'Vapor conv.', 'Hidroeléctrica', 'Eólica'], data: [87.1, 64.1, 33.0, 20.9, 10.0], unit: '%', colors: ['#6B4FA0', '#0D2A52', '#4F6075', '#3A64A0', '#4E9C93'] },
-    x: 'Factor de planta = generación ÷ (capacidad × 8,784 h de 2024). Sol y viento varían con el clima; nuclear, gas y geotermia se controlan. La hidro depende de la lluvia y se reserva para picos.', s: 'Cálculo con CFE24 pp. 21 y 26' },
+    x: 'Factor de planta = generación ÷ (capacidad × 8,784 h de 2024). Sol y viento varían con el clima; nuclear, gas y geotermia se controlan. La hidro depende de la lluvia y se reserva para picos.', w: 'Una red con mucho sol y viento necesita respaldo controlable para la noche o los días sin viento.', s: 'Cálculo con CFE24 pp. 21 y 26' },
   /* ---- Generación ---- */
   { tema: 'generacion', t: '¿Qué tecnología produce más electricidad en México?', big: '55.1%', u: 'ciclo combinado, generación nacional 2022',
     viz: { type: 'bar1', labels: ['Ciclo combinado', 'Vapor conv.', 'Hidroeléctrica', 'Carboeléctrica', 'Nuclear'], data: [61490, 28135, 22354, 14012, 12307], unit: 'GWh', colors: ['#0D2A52', '#4F6075', '#3A64A0', '#22262B', '#6B4FA0'] },
-    x: 'También en CFE: 61,490 GWh en 2024, 39.9% de su generación (gráfica). Usa gas natural y aprovecha el calor dos veces.', s: 'PRODESEN Cap. 4, p. 59 · CFE24 p. 26' },
+    x: 'También en CFE: 61,490 GWh en 2024, 39.9% de su generación (gráfica). Usa gas natural y aprovecha el calor dos veces.', w: 'Depender tanto de una sola tecnología hace al sistema sensible al suministro de su combustible: el gas natural.', s: 'PRODESEN Cap. 4, p. 59 · CFE24 p. 26' },
   { tema: 'generacion', t: '¿Cuál es la central de mayor capacidad?', big: '1,608 MW', u: 'Laguna Verde, la mayor entre las centrales con capacidad documentada',
     viz: { type: 'barh', labels: ['Laguna Verde (nuclear)', 'Infiernillo (hidro)', 'Tamazunchale (CC PIE)', 'Altamira V (CC PIE)', 'Malpaso (hidro)'], data: [1608, 1200, 1135, 1121, 1080], unit: 'MW', colors: ['#6B4FA0', '#3A64A0', '#0D2A52', '#0D2A52', '#3A64A0'] },
-    x: 'Los informes no publican la capacidad de todas las centrales (por ejemplo, Petacalco o Chicoasén), así que el ranking se limita a las documentadas.', s: 'CFE24 pp. 24, 51 y 64' },
+    x: 'Los informes no publican la capacidad de todas las centrales (por ejemplo, Petacalco o Chicoasén), así que el ranking se limita a las documentadas.', w: 'Una sola central grande puede cubrir la demanda de millones de personas.', s: 'CFE24 pp. 24, 51 y 64' },
   { tema: 'generacion', t: '¿Cuánta electricidad produce una central nuclear?', big: '11,978 GWh', u: 'netos de Laguna Verde en 2024',
     viz: { type: 'line', labels: ['E', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'], data: [995, 1086, 927, 610, 912, 1129, 951, 1142, 1098, 1160, 1126, 1171], unit: 'GWh brutos/mes' },
-    x: 'Unidad 1: 6,328.8 GWh; unidad 2: 5,649 GWh. La caída de abril corresponde a la recarga de combustible de la U2 (39.24 días); se recarga cada 18 meses.', s: 'CFE24 pp. 63-65' },
+    x: 'Unidad 1: 6,328.8 GWh; unidad 2: 5,649 GWh. La caída de abril corresponde a la recarga de combustible de la U2 (39.24 días); se recarga cada 18 meses.', w: 'Una central nuclear entrega energía casi constante todo el año, salvo en sus recargas.', s: 'CFE24 pp. 63-65' },
   { tema: 'generacion', t: '¿Cómo ha evolucionado la generación solar y eólica de CFE?', big: '7 → 555 GWh', u: 'generación solar de CFE de 2022 a 2024',
     viz: { type: 'bar3', labels: ['Solar CFE (GWh)', 'Eólica CFE (GWh)'], a: [7, 70], b: [274, 86], c: [555, 75] },
-    x: 'La solar de CFE pasó de 6 MW (2022) a 126 MW (2023) y 433 MW (2024) gracias a Puerto Peñasco. La eólica propia casi no cambia; la eólica de privados (PIE) bajó de 1,832 a 1,600 GWh por menos viento (CFE24 p. 53).', s: 'CFE23 pp. 16 y 300 · CFE24 pp. 21, 26 y 52' },
+    x: 'La solar de CFE pasó de 6 MW (2022) a 126 MW (2023) y 433 MW (2024) gracias a Puerto Peñasco. La eólica propia casi no cambia; la eólica de privados (PIE) bajó de 1,832 a 1,600 GWh por menos viento (CFE24 p. 53).', w: 'La energía solar de CFE crece rápido, pero aún es una fracción pequeña de su generación.', s: 'CFE23 pp. 16 y 300 · CFE24 pp. 21, 26 y 52' },
   { tema: 'generacion', t: '¿Cuántos hogares podría abastecer una central?', big: '6.7 millones', u: 'de usuarios domésticos (teórico) con Laguna Verde',
     viz: { type: 'homes' },
-    x: 'Un usuario doméstico de bajo consumo usó en promedio 1,782 kWh/año en 2024 (77,811 GWh ÷ 43,667,549 usuarios). Es teórico: no considera pérdidas ni horarios de demanda.', s: 'Cálculo con CFE24 pp. 32, 60, 65 y 119' },
+    x: 'Un usuario doméstico de bajo consumo usó en promedio 1,782 kWh/año en 2024 (77,811 GWh ÷ 43,667,549 usuarios). Es teórico: no considera pérdidas ni horarios de demanda.', w: 'Pasar de GWh a hogares ayuda a dimensionar cuánta energía produce una central.', s: 'Cálculo con CFE24 pp. 32, 60, 65 y 119' },
   /* ---- Transmisión ---- */
   { tema: 'transmision', t: '¿Cuántos kilómetros tiene la red de transmisión?', big: '111,138 km', u: 'de líneas de CFE Transmisión en 2024',
     viz: { type: 'bar1', labels: ['2022', '2023', '2024'], data: [110449, 110558, 111138], unit: 'km', colors: ['#9DB6D8', '#3A64A0', '#0D2A52'] },
-    x: 'Equivale a ≈2.8 vueltas a la Tierra (circunferencia ≈ 40,075 km). Incluye 2,317 subestaciones con 168,981 MVA.', s: 'CFE24 p. 76' },
+    x: 'Equivale a ≈2.8 vueltas a la Tierra (circunferencia ≈ 40,075 km). Incluye 2,317 subestaciones con 168,981 MVA.', w: 'Mantener esta red es lo que permite llevar energía de las centrales a todo el país.', s: 'CFE24 p. 76' },
   { tema: 'transmision', t: '¿Por qué se usan líneas de 400 kV?', big: '12×', u: 'menos pérdidas a 400 kV que a 115 kV (misma potencia y resistencia)',
     viz: { type: 'kv' },
-    x: 'Para la misma potencia, I = P/(√3·V·cos φ): si V sube, I baja, y las pérdidas (3·I²·R) bajan con el cuadrado. (115/400)² = 0.083. En 2022 había 26,125 km de líneas de 400 kV.', s: 'Cálculo físico · PRODESEN Anexo 1, Cuadro A1.1, p. 114' },
+    x: 'Para la misma potencia, I = P/(√3·V·cos φ): si V sube, I baja, y las pérdidas (3·I²·R) bajan con el cuadrado. (115/400)² = 0.083. En 2022 había 26,125 km de líneas de 400 kV.', w: 'Subir la tensión es la forma más eficaz de reducir el calor desperdiciado en las líneas.', s: 'Cálculo físico · PRODESEN Anexo 1, Cuadro A1.1, p. 114' },
   { tema: 'transmision', t: '¿Qué sistemas no están conectados al SIN?', big: '3', u: 'sistemas fuera del SIN: Baja California, BCS y Mulegé',
     viz: { type: 'bar1', labels: ['SIN', 'SIBC', 'SIBCS'], data: [21.3, 20.9, 35], unit: '% margen de reserva', colors: ['#3A64A0', '#F7B32B', '#B8742A'] },
-    x: 'BC está unido a EE. UU. (WECC) con 2 líneas de 230 kV, no al SIN. BCS y Mulegé están aislados: por eso BCS requiere más margen de reserva (35%).', s: 'PRODESEN Anexo 1, p. 113 · PRODESEN Cap. 4, p. 62' },
+    x: 'BC está unido a EE. UU. (WECC) con 2 líneas de 230 kV, no al SIN. BCS y Mulegé están aislados: por eso BCS requiere más margen de reserva (35%).', w: 'Un sistema aislado no puede pedir energía a otras regiones: necesita más reserva propia.', s: 'PRODESEN Anexo 1, p. 113 · PRODESEN Cap. 4, p. 62' },
   { tema: 'transmision', t: '¿Qué distancias recorre la electricidad entre regiones?', big: '847 km-c', u: 'tendría la interconexión planeada Baja California–SIN',
     viz: { type: 'barh', labels: ['Integración península BC (proyecto)', 'Interconexión BC–SIN (proyecto)', 'Puerto Peñasco–SIBC (en operación)'], data: [2738, 847, 290], unit: 'km-c', colors: ['#B8742A', '#F7B32B', '#0D2A52'] },
-    x: 'Para unir regiones lejanas se requieren cientos de km de líneas. Hoy Puerto Peñasco (Sonora) se conecta al sistema de Baja California con 290 km-c.', s: 'CFE24 p. 22 · PRODESEN Cap. 5, p. 93 (Cuadro 5.7)' },
+    x: 'Para unir regiones lejanas se requieren cientos de km de líneas. Hoy Puerto Peñasco (Sonora) se conecta al sistema de Baja California con 290 km-c.', w: 'Las grandes distancias hacen que integrar Baja California al SIN requiera obras enormes.', s: 'CFE24 p. 22 · PRODESEN Cap. 5, p. 93 (Cuadro 5.7)' },
   { tema: 'transmision', t: '¿Cómo cambian las pérdidas al aumentar la tensión?', big: '189 → 16 MW', u: 'pérdidas al pasar de 115 a 400 kV (500 MW, R = 10 Ω/fase)',
     viz: { type: 'loss' },
-    x: 'Modelo simplificado con fp = 1. A 115 kV se perdería 37.8% de la potencia; a 400 kV, 3.1%. Prueba otros valores en el simulador del Módulo 2.', s: 'Cálculo: I = P/(√3·V·cos φ), P = 3·I²·R' },
+    x: 'Modelo simplificado con fp = 1. A 115 kV se perdería 37.8% de la potencia; a 400 kV, 3.1%. Prueba otros valores en el simulador del Módulo 2.', w: 'Es la ley de Joule aplicada: por eso las líneas largas usan 400 kV.', s: 'Cálculo: I = P/(√3·V·cos φ), P = 3·I²·R' },
   /* ---- Distribución ---- */
   { tema: 'distribucion', t: '¿Cuántos usuarios reciben electricidad por las redes de distribución?', big: '49.1 millones', u: 'de usuarios en 16 divisiones y 150 zonas',
     viz: { type: 'line', labels: ['2019', '2020', '2021', '2022', '2023', '2024'], data: [98.95, 99.08, 99.21, 99.29, 99.43, 99.64], unit: '% electrificación' },
-    x: 'Un usuario es un punto de consumo con contrato (hogar, comercio, fábrica). El grado de electrificación llegó a 99.64% en 2024.', s: 'CFE24 pp. 13, 14 y 95' },
+    x: 'Un usuario es un punto de consumo con contrato (hogar, comercio, fábrica). El grado de electrificación llegó a 99.64% en 2024.', w: 'Casi todo México tiene electricidad; el reto está en las comunidades más alejadas.', s: 'CFE24 pp. 13, 14 y 95' },
   { tema: 'distribucion', t: '¿Cuántos kilómetros de redes de distribución existen?', big: '901,302 km', u: 'de media y baja tensión (2024)',
     viz: { type: 'bar1', labels: ['Media tensión', 'Baja tensión', 'Subtransmisión', 'Transmisión'], data: [555336, 345966, 51567, 111138], unit: 'km', colors: ['#0D2A52', '#3A64A0', '#9DB6D8', '#F7B32B'] },
-    x: 'La red de distribución es 8 veces más larga que la de transmisión: ≈22.5 vueltas a la Tierra (cálculo).', s: 'CFE24 pp. 76 y 97' },
+    x: 'La red de distribución es 8 veces más larga que la de transmisión: ≈22.5 vueltas a la Tierra (cálculo).', w: 'La red de distribución es la parte del sistema que llega a cada casa, por eso es la más extensa.', s: 'CFE24 pp. 76 y 97' },
   { tema: 'distribucion', t: '¿Qué porcentaje de energía se pierde en distribución?', big: '10.69%', u: 'de pérdidas totales en 2024 (incluye alta tensión)',
     viz: { type: 'bar1', labels: ['2022', '2023', '2024', 'Referencia OCDE'], data: [11.05, 10.86, 10.69, 6.31], unit: '%', colors: ['#9DB6D8', '#3A64A0', '#0D2A52', '#F7B32B'] },
-    x: 'Incluye pérdidas técnicas (calor I²R) y no técnicas (usos ilícitos, errores de medición). En media y baja tensión fueron 12.88%. La reducción de 2024 recuperó 2,356 GWh.', s: 'CFE24 pp. 9 y 96-97 (referencia: Banco Mundial citado por CFE)' },
+    x: 'Incluye pérdidas técnicas (calor I²R) y no técnicas (usos ilícitos, errores de medición). En media y baja tensión fueron 12.88%. La reducción de 2024 recuperó 2,356 GWh.', w: 'Cada punto porcentual de pérdidas equivale a miles de GWh que se producen y no se cobran.', s: 'CFE24 pp. 9 y 96-97 (referencia: Banco Mundial citado por CFE)' },
   { tema: 'distribucion', t: '¿Cómo se reduce la tensión antes de llegar a una vivienda?', big: '1,660,977', u: 'transformadores de distribución en servicio',
     viz: { type: 'steps' },
-    x: 'Cada transformador cumple Vp/Vs = Np/Ns. Los niveles mostrados son típicos del sistema mexicano; los de subtransmisión (115 kV) aparecen en CFE24.', s: 'CFE24 p. 97 · niveles típicos de tensión' },
+    x: 'Cada transformador cumple Vp/Vs = Np/Ns. Los niveles mostrados son típicos del sistema mexicano; los de subtransmisión (115 kV) aparecen en CFE24.', w: 'Cada transformador reduce la tensión a un nivel seguro para el siguiente tramo de la red.', s: 'CFE24 p. 97 · niveles típicos de tensión' },
   { tema: 'distribucion', t: '¿Qué diferencia hay entre el consumo residencial e industrial?', big: '138×', u: 'más consumo por usuario industrial que doméstico',
     viz: { type: 'sector' },
-    x: 'Hogares: 43.7 millones de usuarios y 78,298 GWh (≈1,790 kWh/usuario). Industria: 0.45 millones de usuarios y 111,820 GWh (≈246,400 kWh/usuario).', s: 'CFE24 pp. 119-120 (cálculo)' }
+    x: 'Hogares: 43.7 millones de usuarios y 78,298 GWh (≈1,790 kWh/usuario). Industria: 0.45 millones de usuarios y 111,820 GWh (≈246,400 kWh/usuario).', w: 'Pocas industrias consumen la mitad de la energía: su eficiencia pesa mucho en el sistema.', s: 'CFE24 pp. 119-120 (cálculo)' }
 ];
 
 /* ======== Reforma energética ======== */
@@ -1801,6 +1879,15 @@ Chart.defaults.animation.duration = 450;
 const charts = {};
 function mk(id, cfg) { if (charts[id]) charts[id].destroy(); const c = document.getElementById(id); if (!c) return null; charts[id] = new Chart(c, cfg); return charts[id]; }
 const nf = v => Number(v).toLocaleString('es-MX', { maximumFractionDigits: 2 });
+/* Etiquetas dentro de las barras apiladas (porcentaje del total de cada barra) */
+const SEGLBL = { id: 'seglbl', afterDatasetsDraw(ch, _a, o) {
+  const { ctx } = ch; ctx.save(); ctx.font = "700 11px 'JetBrains Mono', monospace"; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ch.data.datasets.forEach((ds, di) => { const meta = ch.getDatasetMeta(di); if (meta.hidden) return;
+    meta.data.forEach((bar, i) => { const v = ds.data[i]; if (v == null) return; const h = Math.abs(bar.base - bar.y); if (h < 16) return;
+      const pctv = o && o.pct === false && o.tot ? v / o.tot[i] * 100 : (o && o.tot && !o.pct ? v / o.tot[i] * 100 : v);
+      ctx.fillStyle = (ds.backgroundColor === '#F7B32B' || ds.backgroundColor === CATC.renovable) ? '#071A36' : '#fff';
+      ctx.fillText(pctv.toFixed(1) + '%', bar.x, (bar.y + bar.base) / 2); }); });
+  ctx.restore(); } };
 
 /* ---------- Tabs ---------- */
 const maps = {};
@@ -1814,6 +1901,7 @@ function show(m) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 $$('nav.tabs button').forEach(b => b.addEventListener('click', () => show(b.dataset.m)));
+document.addEventListener('click', e => { const a = e.target.closest('.qidx a'); if (!a) return; e.preventDefault(); const t = document.querySelector(a.getAttribute('href')); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
 
 /* ---------- Tooltips de definiciones ---------- */
 const tip = $('#tipbox');
@@ -1859,6 +1947,13 @@ function kpi(l, v, unit, d, src, cls = '') {
   return `<div class="card kpi"><div class="l">${l}</div><div class="v">${v}${unit ? ` <small>${unit}</small>` : ''}</div>${d ? `<div class="d ${cls}">${d}</div>` : ''}<div class="src">${src}</div></div>`;
 }
 
+/* Slider + caja numérica: no se corrige el valor mientras se escribe; se ajusta al rango al salir del campo */
+function bindPair(sId, nId, cb) {
+  const a = $('#' + sId), b = $('#' + nId);
+  a.addEventListener('input', () => { b.value = a.value; b.removeAttribute('aria-invalid'); cb(); });
+  b.addEventListener('input', () => { const v = parseFloat(b.value); if (!isNaN(v) && v >= +b.min && v <= +b.max) { a.value = v; b.removeAttribute('aria-invalid'); cb(); } else b.setAttribute('aria-invalid', 'true'); });
+  b.addEventListener('change', () => { let v = parseFloat(b.value); if (isNaN(v)) v = +a.value; v = Math.min(+b.max, Math.max(+b.min, v)); a.value = v; b.value = a.value; b.removeAttribute('aria-invalid'); cb(); });
+}
 /* ---------- mapa base ---------- */
 function baseMap(id, styleFn, opts = {}) {
   const map = L.map(id, { zoomSnap: 0.25, minZoom: 4, maxZoom: 10, attributionControl: true, scrollWheelZoom: false, ...opts });
@@ -1886,12 +1981,25 @@ function buildM0() {
     <text x="40" y="140" font-size="11.5" fill="#0F1E33">Cogeneración</text><text x="48" y="154" font-size="11.5" fill="#0F1E33">eficiente</text>
   </svg>`;
 
+  /* Misma turbina, distinto calor */
+  $('#rankine').innerHTML = [['Carbón (combustión)', '#22262B', 'Fósil'], ['Uranio (fisión)', '#6B4FA0', 'Nuclear'], ['Vapor geotérmico', '#B8742A', 'Renovable'], ['Biomasa (combustión)', '#7A9A3A', 'Renovable']]
+    .map(x => `<div class="src2" style="background:${x[1]}">${x[0]}<br><small style="font-weight:500;opacity:.85">${x[2]}</small></div>`).join('') +
+    '<div class="arr">↓ calor ↓</div><div class="common">agua → VAPOR → TURBINA → GENERADOR → electricidad → condensador → agua</div>' +
+    '<div class="arr" style="font-size:11px;font-weight:600;color:var(--muted)">La parte común no decide si es fósil, nuclear o renovable</div>';
+  $('#myths').innerHTML = [
+    ['"La nuclear es renovable porque no contamina."', 'Falso. No emite CO₂ al generar, por eso es <b>limpia</b>, pero el uranio es un mineral que se agota: <b>no es renovable</b>.'],
+    ['"El gas natural es energía limpia porque contamina menos que el carbón."', 'Falso. Emite menos que el carbón (490 vs. 820 gCO₂e/kWh en ciclo de vida, IPCC), pero sigue siendo un <b>combustible fósil</b>.'],
+    ['"Las renovables siempre generan lo mismo."', 'Falso. La hidroeléctrica de CFE cayó de 34,110 GWh (2022) a 19,568 GWh (2023) por falta de lluvia (CFE23 pp. 18 y 300).'],
+    ['"Ciclo combinado es un combustible."', 'Falso. Es una <b>tecnología</b>; en México usa gas natural. Recurso ≠ tecnología.'],
+    ['"Si la central tiene turbina de vapor, es fósil."', 'Falso. Nucleares, geotérmicas y de biomasa también usan turbina de vapor (ver diagrama).']
+  ].map(m => `<details><summary>${m[0]}</summary><p>${m[1]}</p></details>`).join('');
+
   /* Clasificador */
-  let sel = null, okN = 0, errN = 0;
+  let sel = null, okN = 0, errN = 0; const hist = [];
   const deck = $('#deck'), binsBox = $('#bins'), fb = $('#clsFb');
-  binsBox.innerHTML = BINS.map(b => `<div class="bin" data-k="${b.k}"><h4><span class="dot" style="background:${b.c}"></span>${b.n}</h4><button class="drop" data-k="${b.k}">Colocar aquí la tarjeta seleccionada</button><div class="inner"></div></div>`).join('');
+  binsBox.innerHTML = BINS.map(b => `<div class="bin" data-k="${b.k}"><h4><span class="dot" style="background:${b.c}"></span>${b.n}<span class="cnt mono" style="margin-left:auto;font-size:11px;color:var(--muted)"></span></h4><button class="drop" data-k="${b.k}">Colocar aquí la tarjeta seleccionada</button><div class="inner"></div></div>`).join('');
   function render() {
-    deck.innerHTML = ''; okN = 0; errN = 0; sel = null; $$('.bin .inner').forEach(i => i.innerHTML = '');
+    deck.innerHTML = ''; okN = 0; errN = 0; sel = null; hist.length = 0; $$('.bin .inner').forEach(i => i.innerHTML = '');
     const order = CARDS.map((c, i) => i).sort(() => Math.random() - .5);
     order.forEach(i => {
       const c = CARDS[i];
@@ -1912,21 +2020,35 @@ function buildM0() {
   function place(k) {
     if (!sel) { fb.className = 'fbk'; fb.textContent = 'Primero selecciona una tarjeta.'; return; }
     const c = CARDS[sel.dataset.i];
+    const kindTxt = { recurso: 'un recurso energético', combustible: 'un combustible', proceso: 'un proceso de conversión', tecnologia: 'una tecnología' }[c.k];
+    const WHY = { fosil: 'proviene de restos orgánicos fosilizados, se agota y emite CO₂ al quemarse', nuclear: 'obtiene su energía del núcleo del uranio (fisión), que es un mineral finito', renovable: 'usa un recurso que se regenera naturalmente', depende: 'puede usar distintos combustibles, así que su familia depende de cuál use' };
+    const NOT = { fosil: 'no se forma de restos orgánicos ni se quema un combustible fósil', nuclear: 'no hay fisión de núcleos atómicos', renovable: 'su recurso no se regenera a escala humana', depende: 'su familia sí está definida sin importar el combustible' };
+    const chosen = BINS.find(b => b.k === k).n, right = BINS.find(b => b.k === c.cat).n;
     if (c.cat === k) {
-      sel.classList.remove('sel', 'bad'); sel.classList.add('ok'); sel.setAttribute('draggable', 'false');
+      sel.classList.remove('sel', 'bad'); sel.classList.add('ok'); sel.setAttribute('draggable', 'false'); sel.title = c.f;
       $(`.bin[data-k="${k}"] .inner`).appendChild(sel); okN++;
-      fb.className = 'fbk ok'; fb.innerHTML = `✔ <b>Correcto.</b> ${c.f}`;
+      fb.className = 'fbk ok';
+      fb.innerHTML = `✔ <b>Correcto: ${c.t} → ${right}.</b> Es ${kindTxt} que ${WHY[c.cat]}.<br><span style="font-size:12.5px">${c.f}</span>`;
+      hist.push([c.t, true]);
     } else {
       errN++; sel.classList.add('bad');
-      const right = BINS.find(b => b.k === c.cat).n;
       fb.className = 'fbk bad';
-      fb.innerHTML = c.cat === 'depende' ? `✘ <b>${c.t}</b> no es "${BINS.find(b => b.k === k).n}" en todos los casos. ${c.f}` : `✘ No es "${BINS.find(b => b.k === k).n}". Pista: revisa si el recurso se regenera o si es un mineral finito. ${c.f.split('.')[0]}.`;
-      void right;
+      fb.innerHTML = c.cat === 'depende'
+        ? `✘ <b>${c.t} no siempre es "${chosen}"</b>. Es ${kindTxt}, no un recurso: su familia depende del combustible o de la fuente de calor que use.<br><b>Pista:</b> busca la categoría para tecnologías que pueden usar más de un recurso. Inténtalo de nuevo.`
+        : `✘ <b>${c.t} no va en "${chosen}"</b>: en ese grupo ${NOT[k]}, y aquí no es así.<br><b>Pista:</b> es ${kindTxt}; piensa de dónde sale su energía y si se agota. Inténtalo de nuevo con la misma tarjeta.`;
+      hist.push([c.t, false]);
+      const keep = sel; sel = null; score(); pick(keep, true); return;
     }
     sel = null; score();
-    if (okN === CARDS.length) { fb.className = 'fbk ok'; fb.innerHTML = `🎉 <b>¡Completaste el clasificador!</b> ${okN} aciertos con ${errN} errores. Recuerda: una tecnología (como la turbina de vapor) no siempre se puede clasificar sin saber su combustible.`; }
+    if (okN === CARDS.length) {
+      const errs = [...new Set(hist.filter(h => !h[1]).map(h => h[0]))];
+      fb.className = 'fbk ok'; fb.innerHTML = `🎉 <b>¡Completaste el clasificador!</b> ${okN} aciertos con ${errN} errores.${errs.length ? ` Repasa: <b>${errs.join(', ')}</b>.` : ' ¡Sin errores!'} Recuerda: una tecnología (como la turbina de vapor) no siempre se puede clasificar sin saber su combustible.`;
+    }
   }
-  function score() { $('#clsScore').textContent = `${okN} / ${CARDS.length}`; $('#clsErr').textContent = errN; }
+  function score() {
+    $('#clsScore').textContent = `${okN} / ${CARDS.length}`; $('#clsErr').textContent = errN;
+    BINS.forEach(b => { const tot = CARDS.filter(c => c.cat === b.k).length; const n = $$(`.bin[data-k="${b.k}"] .inner .cardx`).length; const h = $(`.bin[data-k="${b.k}"] .cnt`); if (h) h.textContent = `${n}/${tot}`; });
+  }
   $$('.bin').forEach(b => {
     b.addEventListener('dragover', e => { e.preventDefault(); b.classList.add('over'); });
     b.addEventListener('dragleave', () => b.classList.remove('over'));
@@ -1943,6 +2065,7 @@ function buildM0() {
     const c = CHAINS[i];
     $('#flow').innerHTML = c.steps.map((s, j) => `<button class="st" aria-pressed="${j === 0}" data-j="${j}"><b>${s[0]}</b><span>${s[1]}</span></button>`).join('');
     const info = j => { const s = c.steps[j]; $('#stinfo').innerHTML = `<b>Etapa ${j + 1} de ${c.steps.length} · ${s[0]}</b> <span class="chip">${s[1]}</span><br>${s[2]}<br><span class="src">Tecnología: <span data-tip="${c.tech}" tabindex="0">${TECH[c.tech].n}</span></span>`; };
+    $('#physnote').innerHTML = `<b>Física de la conversión:</b> ${c.phys}`;
     info(0);
     $$('#flow .st').forEach(b => b.addEventListener('click', () => { $$('#flow .st').forEach(x => x.setAttribute('aria-pressed', x === b)); info(+b.dataset.j); }));
   }
@@ -1957,11 +2080,11 @@ function buildM0() {
       label: k === 'fosil' ? 'Fósil' : k === 'nuclear' ? 'Nuclear' : 'Renovable', backgroundColor: CATC[k],
       data: S.map((x, i) => pct ? x[k] / T[i] * 100 : x[k]), borderRadius: 4
     }));
-    mk('cResCFE', { type: 'bar', data: { labels: ['2022', '2023', '2024'], datasets: ds },
-      options: { plugins: { tooltip: { callbacks: { label: c => c.raw == null ? 'Dato no disponible' : `${c.dataset.label}: ${nf(c.raw)} ${pct ? '%' : 'GWh'}` } } },
+    mk('cResCFE', { type: 'bar', data: { labels: ['2022 · año lluvioso', '2023 · estiaje', '2024'], datasets: ds }, plugins: [SEGLBL],
+      options: { plugins: { seglbl: { pct, tot: T }, tooltip: { callbacks: { label: c => c.raw == null ? 'Dato no disponible' : `${c.dataset.label}: ${nf(c.raw)} ${pct ? '%' : 'GWh'}` } } },
         scales: { x: { stacked: true }, y: { stacked: true, max: pct ? 100 : undefined, title: { display: true, text: pct ? '% de la generación de CFE' : 'GWh brutos' } } } } });
   }
-  segBind('m0Unit', b => drawRes(b.dataset.u)); drawRes('gwh');
+  segBind('m0Unit', b => drawRes(b.dataset.u)); drawRes('pct');
   mk('cResSEN', { type: 'doughnut', data: { labels: GEN_SEN_2022.items.map(i => i[0]), datasets: [{ data: GEN_SEN_2022.items.map(i => i[1]), backgroundColor: GEN_SEN_2022.items.map(i => i[3]), borderColor: '#fff', borderWidth: 2 }] },
     options: { cutout: '58%', plugins: { legend: { position: 'right', labels: { font: { size: 11 } } }, tooltip: { callbacks: { label: c => `${c.label}: ${c.raw}% (${GEN_SEN_2022.items[c.dataIndex][2]})` } } } },
     plugins: [{ id: 'ctr', afterDraw(ch) { const { ctx, chartArea: a } = ch; const m = ch.getDatasetMeta(0).data[0]; if (!m) return; ctx.save(); ctx.textAlign = 'center'; ctx.fillStyle = '#0D2A52'; ctx.font = "800 18px 'JetBrains Mono'"; ctx.fillText('68.8%', m.x, m.y - 2); ctx.font = "12px 'Space Grotesk'"; ctx.fillStyle = '#4F6075'; ctx.fillText('fósil', m.x, m.y + 15); ctx.restore(); void a; } }] });
@@ -2010,7 +2133,7 @@ function buildM0() {
     { t: '3 · Participación de energía nuclear', v: (s24.nuclear / t24 * 100).toFixed(1) + '%', d: 'de CFE en 2024, con una sola central (Laguna Verde). Nacional 2022: 3.1%.', bars: [[s24.nuclear / t24 * 100, '#6B4FA0']], s: 'Cálculo CFE24 p. 26 · PRODESEN Cap. 4 p. 59', r: 'Energía limpia y constante, pero con combustible finito y residuos radiactivos que gestionar.' },
     { t: '4 · Evolución de las tecnologías', v: '126 → 433 MW', d: 'capacidad solar de CFE (2023 → 2024); generación solar +102.6%.', bars: [[126 / 433 * 100, '#F7B32B']], s: 'CFE24 pp. 21 y 26', r: 'Crece la solar, pero sigue siendo 0.4% de la generación de CFE.' },
     { t: '5 · Implicaciones de usar no renovables', v: '0.6 tCO₂/MWh', d: 'emisiones promedio de CFE (2022-2024). Carbón: +19.6% de consumo; combustóleo: −18.1%.', bars: [[60, '#4F6075']], s: 'CFE24 pp. 26 y 28', r: '154,059 GWh × 0.6 t/MWh ≈ 92 millones de t de CO₂ al año (cálculo aproximado).' },
-    { t: '6 · Vulnerabilidad climática', v: '34,110 → 19,568 GWh', d: 'generación hidroeléctrica de CFE 2022 → 2023 (−42.6%) por la temporada de estiaje; en 2024 se recuperó a 22,354 GWh.', bars: [[100, '#3A64A0'], [0, '#fff']], s: 'CFE23 pp. 18 y 300 · CFE24 p. 26', r: 'Cuando falta lluvia, el hueco se llena con fósiles: por eso CFE pasó de 64.9% a 75.6% fósil en un año.' }
+    { t: '6 · Vulnerabilidad climática', v: '34,110 → 19,568 GWh', d: 'generación hidroeléctrica de CFE 2022 → 2023 (−42.6%) por la temporada de estiaje; en 2024 se recuperó a 22,354 GWh.', bars: [[100, '#3A64A0'], [0, '#fff']], s: 'CFE23 pp. 18 y 300 · CFE24 p. 26', r: 'Cuando falta lluvia, el hueco se llena con fósiles: por eso CFE pasó de 64.9% a 75.7% fósil en un año.' }
   ];
   $('#gauges').innerHTML = G.map(g => `<div class="card gauge"><div class="kpi"><div class="l">${g.t}</div><div class="v">${g.v}</div></div><div class="meter">${g.bars.map(b => `<i style="width:${b[0]}%;background:${b[1]}"></i>`).join('')}</div><div style="font-size:13px">${g.d}</div><div class="note" style="margin-top:2px">💡 ${g.r}</div><div class="src">${g.s}</div></div>`).join('');
 
@@ -2099,7 +2222,7 @@ function buildM1() {
   const s22 = catSums(2022), s23 = catSums(2023), s24 = catSums(2024);
   mk('cFosLim', { type: 'bar', data: { labels: ['CFE 2022', 'CFE 2023', 'CFE 2024', 'Nacional 2022'], datasets: [
     { label: 'Fósil', data: [s22.fosil / GEN_CFE.tot[2022] * 100, s23.fosil / GEN_CFE.tot[2023] * 100, s24.fosil / GEN_CFE.tot[2024] * 100, 68.8], backgroundColor: '#4F6075', borderRadius: 4 },
-    { label: 'Limpia (nuclear + renovable + otras limpias)', data: [(s22.nuclear + s22.renovable) / GEN_CFE.tot[2022] * 100, (s23.nuclear + s23.renovable) / GEN_CFE.tot[2023] * 100, (s24.nuclear + s24.renovable) / GEN_CFE.tot[2024] * 100, 31.2], backgroundColor: '#F7B32B', borderRadius: 4 }] },
+    { label: 'Limpia (nuclear + renovable + otras limpias)', data: [(s22.nuclear + s22.renovable) / GEN_CFE.tot[2022] * 100, (s23.nuclear + s23.renovable) / GEN_CFE.tot[2023] * 100, (s24.nuclear + s24.renovable) / GEN_CFE.tot[2024] * 100, 31.2], backgroundColor: '#F7B32B', borderRadius: 4 }] }, plugins: [SEGLBL],
     options: { plugins: { tooltip: { callbacks: { label: c => `${c.dataset.label}: ${c.raw.toFixed(1)}%` } } }, scales: { x: { stacked: true }, y: { stacked: true, max: 100, title: { display: true, text: '%' } } } } });
   /* CC vs vapor */
   const H = 8784;
@@ -2155,14 +2278,24 @@ function buildM2() {
 
   /* simulador */
   const ids = [['sP', 'nP'], ['sV', 'nV'], ['sR', 'nR'], ['sF', 'nF']];
-  ids.forEach(([s, n]) => { const a = $('#' + s), b = $('#' + n); a.addEventListener('input', () => { b.value = a.value; sim(); }); b.addEventListener('input', () => { const v = Math.min(+b.max, Math.max(+b.min, +b.value || +b.min)); a.value = v; sim(); }); b.addEventListener('change', () => { b.value = a.value; }); });
+  ids.forEach(([s, n]) => bindPair(s, n, sim));
   $('#vPre').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; $('#sV').value = b.dataset.v; $('#nV').value = b.dataset.v; sim(); });
   function calc(P_MW, V_kV, R, pf) { const I = (P_MW * 1e6) / (Math.sqrt(3) * V_kV * 1e3 * pf); const Pl = 3 * I * I * R / 1e6; return { I, Pl, pct: Pl / P_MW * 100 }; }
   function sim() {
     const P = +$('#sP').value, V = +$('#sV').value, R = +$('#sR').value, F = +$('#sF').value;
     const r = calc(P, V, R, F);
     const S = P / F;
-    $('#simOut').innerHTML = [['Corriente por fase', fmt(r.I, 1) + ' A'], ['Pérdidas resistivas', fmt(r.Pl, 2) + ' MW'], ['Pérdidas / potencia', fmt(r.pct, 2) + ' %'], ['Potencia aparente', fmt(S, 1) + ' MVA']].map(o => `<div class="o"><div class="l">${o[0]}</div><div class="v">${o[1]}</div></div>`).join('');
+    const Pr = P - r.Pl;
+    $('#simOut').innerHTML = [['Corriente por fase', fmt(r.I, 1) + ' A'], ['Pérdidas resistivas', fmt(r.Pl, 2) + ' MW'], ['Pérdidas / potencia', fmt(r.pct, 2) + ' %'], ['Potencia aparente', fmt(S, 1) + ' MVA'], ['Tensión de fase V/√3', fmt(V / Math.sqrt(3), 1) + ' kV'], ['Potencia que llega', r.pct < 100 ? fmt(Pr, 1) + ' MW' : '—'], ['Eficiencia de la línea', r.pct < 100 ? fmt(100 - r.pct, 2) + ' %' : '—'], ['Pérdida anual (8,760 h)', fmt(r.Pl * 8.76, 1) + ' GWh']].map(o => `<div class="o"><div class="l">${o[0]}</div><div class="v">${o[1]}</div></div>`).join('');
+    const L2 = [115, 230, 400].map(v => calc(P, v, R, F));
+    $('#simExplain').innerHTML = `Con ${fmt(P)} MW y ${R} Ω por fase: a <b>115 kV</b> circulan ${fmt(L2[0].I, 0)} A y se pierden <b>${fmt(L2[0].Pl, 1)} MW</b>; a <b>230 kV</b>, ${fmt(L2[1].I, 0)} A y <b>${fmt(L2[1].Pl, 1)} MW</b>; a <b>400 kV</b>, ${fmt(L2[2].I, 0)} A y <b>${fmt(L2[2].Pl, 1)} MW</b>. Duplicar la tensión (115 → 230 kV) reduce la corriente a la mitad y las pérdidas a la <b>cuarta parte</b>: P<sub>p</sub> ∝ 1/V².${r.pct > 10 && r.pct <= 100 ? ' <span style="color:#B3402A">⚠ Pérdidas mayores a 10%: en la práctica se elevaría la tensión o se usaría un conductor de menor resistencia.</span>' : ''}`;
+    const c2 = charts.cSim2;
+    const dd = [L2.map(x => Math.min(x.Pl, P * 1.5)), L2.map(x => x.I)];
+    if (c2) { c2.data.datasets[0].data = dd[0]; c2.data.datasets[1].data = dd[1]; c2.update('none'); }
+    else mk('cSim2', { type: 'bar', data: { labels: ['115 kV', '230 kV', '400 kV'], datasets: [
+      { label: 'Pérdidas (MW)', data: dd[0], backgroundColor: ['#B3402A', '#F7B32B', '#0D2A52'], borderRadius: 4, yAxisID: 'y' },
+      { label: 'Corriente (A)', data: dd[1], type: 'line', borderColor: '#3A64A0', backgroundColor: '#3A64A0', pointRadius: 5, yAxisID: 'y1' }] },
+      options: { animation: false, plugins: { tooltip: { callbacks: { label: c => `${c.dataset.label}: ${nf(c.raw)}` } } }, scales: { y: { beginAtZero: true, title: { display: true, text: 'Pérdidas (MW)' } }, y1: { position: 'right', beginAtZero: true, grid: { drawOnChartArea: false }, title: { display: true, text: 'Corriente (A)' } } } } });
     $('#simCalc').innerHTML = `I = ${fmt(P * 1e6, 0)} W / (1.732 × ${fmt(V * 1e3, 0)} V × ${F}) = <b>${fmt(r.I, 1)} A</b> · P<sub>p</sub> = 3 × ${fmt(r.I, 1)}² × ${R} Ω = <b>${fmt(r.Pl, 3)} MW</b>${r.pct > 100 ? ' <span style="color:#F7B32B">⚠ pérdidas &gt; potencia: combinación físicamente inviable</span>' : ''}`;
     const vs = []; for (let v = 69; v <= 400; v += 3.45) vs.push(+v.toFixed(1));
     const ch = charts.cSim;
@@ -2224,13 +2357,14 @@ function buildM3() {
 
   /* simulador transformador */
   const pairs = [['tVp', 'ntVp'], ['tA', 'ntA'], ['tS', 'ntS']];
-  pairs.forEach(([s, n]) => { const a = $('#' + s), b = $('#' + n); a.addEventListener('input', () => { b.value = a.value; tr(); }); b.addEventListener('input', () => { const v = Math.min(+b.max, Math.max(+b.min, +b.value || +b.min)); a.value = v; tr(); }); b.addEventListener('change', () => { b.value = a.value; }); });
+  pairs.forEach(([s, n]) => bindPair(s, n, tr));
   $('#tPre').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; [['tVp', 'ntVp', 'vp'], ['tA', 'ntA', 'a'], ['tS', 'ntS', 's']].forEach(([s, n, k]) => { $('#' + s).value = b.dataset[k]; $('#' + n).value = b.dataset[k]; }); tr(); });
   const fv = kv => kv >= 1 ? fmt(kv, 2) + ' kV' : fmt(kv * 1000, 1) + ' V';
   function tr() {
     const Vp = +$('#tVp').value, a = +$('#tA').value, S = +$('#tS').value;
     const Vs = Vp / a, Ip = S / Vp, Is = S / Vs;
     $('#tOut').innerHTML = [['Tensión secundaria Vs', fv(Vs)], ['Corriente primaria Ip', fmt(Ip, 2) + ' A'], ['Corriente secundaria Is', fmt(Is, 2) + ' A'], [a >= 1 ? 'Tipo' : 'Tipo', a > 1 ? 'Reductor' : a < 1 ? 'Elevador' : 'Aislador 1:1']].map(o => `<div class="o"><div class="l">${o[0]}</div><div class="v">${o[1]}</div></div>`).join('');
+    $('#tWarn').innerHTML = Vs * 1000 < 100 ? '⚠ Vs menor a 100 V: no es un nivel de servicio normal; revisa la relación de espiras.' : (Vs > Vp ? 'ℹ Relación menor que 1: el transformador <b>eleva</b> la tensión (como el de una central hacia la red de transmisión).' : '');
     $('#tCalc').innerHTML = `Vs = ${fmt(Vp, 2)} kV ÷ ${a} = <b>${fv(Vs)}</b> · Ip = ${fmt(S)} kVA ÷ ${fmt(Vp, 2)} kV = <b>${fmt(Ip, 2)} A</b> · Is = ${fmt(S)} kVA ÷ ${fmt(Vs, 4)} kV = <b>${fmt(Is, 2)} A</b> · Comprobación: Vp·Ip = Vs·Is = ${fmt(S)} kVA ✔`;
     const ch = charts.cTr;
     const d1 = [Vp, Vs], d2 = [Ip, Is];
@@ -2272,7 +2406,7 @@ function htmlViz(v, i) {
 }
 function hallCard(h, i, gridId) {
   const html = htmlViz(h.viz, `${gridId}${i}`);
-  return `<article class="hc" data-tema="${h.tema || ''}" style="position:relative">${h.tema ? `<span class="hnum">#${i + 1}</span>` : ''}<div class="hh">${h.tema ? `<span class="tg ${h.tema}">${TEMAS[h.tema]}</span>` : ''}<h3>${h.t}</h3><div class="big">${h.big}</div><div class="bu">${h.u}</div></div><div class="hv">${html || `<canvas id="${gridId}c${i}"></canvas>`}</div><div class="hx">${h.x}</div><div class="hs">Fuente: ${h.s}</div></article>`;
+  return `<article class="hc" data-tema="${h.tema || ''}" style="position:relative">${h.tema ? `<span class="hnum">#${i + 1}</span>` : ''}<div class="hh">${h.tema ? `<span class="tg ${h.tema}">${TEMAS[h.tema]}</span>` : ''}<h3>${h.t}</h3><div class="big">${h.big}</div><div class="bu">${h.u}</div></div><div class="hv">${html || `<canvas id="${gridId}c${i}"></canvas>`}</div><div class="hx">${h.x}</div>${h.w ? `<div class="why"><b>¿Por qué importa?</b> ${h.w}</div>` : ''}<div class="hs">Fuente: ${h.s}</div></article>`;
 }
 function wireHtmlViz(h, id) {
   if (h.viz.type === 'homes') { const s = $('#homesSel' + id), o = $('#homesOut' + id), b = $('#homesBar' + id); const f = () => { const n = s.value * 1e6 / 1782; o.textContent = (n / 1e6).toFixed(2) + ' millones'; b.textContent = '⌂'.repeat(Math.max(1, Math.round(n / 5e5))); }; s.addEventListener('change', f); f(); }
@@ -2283,9 +2417,22 @@ function buildM4() {
   hf.innerHTML = `<div class="seg" id="hSeg"><button aria-pressed="true" data-t="all">Todos (20)</button>${Object.entries(TEMAS).map(([k, n]) => `<button aria-pressed="false" data-t="${k}">${n} (5)</button>`).join('')}</div>`;
   $('#hgrid').innerHTML = HALL.map((h, i) => hallCard(h, i, 'h')).join('');
   HALL.forEach((h, i) => { if (!htmlViz(h.viz, 'x')) miniViz('hc' + i, h.viz); else wireHtmlViz(h, 'h' + i); });
-  segBind('hSeg', b => { $$('#hgrid .hc').forEach(c => c.style.display = (b.dataset.t === 'all' || c.dataset.tema === b.dataset.t) ? '' : 'none'); });
+  let tema = 'all';
+  const applyF = () => { const q = ($('#hSearch').value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); let n = 0;
+    $$('#hgrid .hc').forEach(c => { const txt = c.textContent.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); const on = (tema === 'all' || c.dataset.tema === tema) && (!q || txt.includes(q)); c.style.display = on ? '' : 'none'; if (on) n++; });
+    let e = $('#hEmpty'); if (!e) { e = el('p', { id: 'hEmpty', class: 'sub' }); $('#hgrid').after(e); } e.textContent = n ? '' : 'Ningún hallazgo coincide con la búsqueda.'; };
+  segBind('hSeg', b => { tema = b.dataset.t; applyF(); });
+  $('#hSearch').addEventListener('input', applyF);
+  /* animación de conteo de la cifra principal al aparecer */
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(en => { if (!en.isIntersecting) return; io.unobserve(en.target); const t = en.target, txt = t.textContent; const mm = txt.match(/^([^\d]*)([\d,]+(?:\.\d+)?)(.*)$/); if (!mm || /→/.test(txt)) return;
+      const end = parseFloat(mm[2].replace(/,/g, '')), dec = (mm[2].split('.')[1] || '').length; const t0 = performance.now();
+      const step = now => { const k = Math.min(1, (now - t0) / 700); const v = end * (1 - Math.pow(1 - k, 3)); t.textContent = mm[1] + v.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }) + mm[3]; if (k < 1) requestAnimationFrame(step); else t.textContent = txt; };
+      requestAnimationFrame(step); }), { threshold: .6 });
+    $$('#m4 .hc .big').forEach(b => io.observe(b));
+  }
   /* timeline */
-  const ec = { pre: '#9DB6D8', reforma: '#F7B32B', cambio: '#B3402A' };
+  const ec = { pre: '#9DB6D8', reforma: '#F7B32B', cambio: '#1C4A85' };
   $('#tl').innerHTML = TIMELINE.map((e, i) => `<button style="--c:${ec[e.era]}" aria-pressed="${i === 4}" data-i="${i}"><span class="yy">${e.y}</span><span class="tt">${e.t}</span></button>`).join('');
   const det = i => { const e = TIMELINE[i]; $('#tldet').innerHTML = `<span class="mono" style="color:#C9D7EA">${e.y} · ${e.era === 'pre' ? 'Situación previa' : e.era === 'reforma' ? 'Reforma 2013-2014 e implementación' : 'Modificaciones posteriores'}</span><h3>${e.t}</h3><div>${e.d}</div><div class="src" style="margin-top:6px">Fuente: ${e.s}</div><div style="margin-top:8px;font-size:12px;color:#C9D7EA">◀ ▶ Usa las flechas del teclado o toca otro evento</div>`; };
   $$('#tl button').forEach(b => { b.addEventListener('click', () => { $$('#tl button').forEach(x => x.setAttribute('aria-pressed', x === b)); det(+b.dataset.i); }); b.addEventListener('keydown', e => { const i = +b.dataset.i; const n = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : null; if (n == null || n < 0 || n >= TIMELINE.length) return; const nb = $$('#tl button')[n]; nb.focus(); nb.click(); }); });
@@ -2300,6 +2447,14 @@ function buildM4() {
 }
 
 const BUILD = { m0: buildM0, m1: buildM1, m2: buildM2, m3: buildM3, m4: buildM4 };
+const ORDER = ['m0', 'm1', 'm2', 'm3', 'm4', 'm5'];
+const NAMES = { m0: '0 · Recursos', m1: '1 · Generación', m2: '2 · Transmisión', m3: '3 · Distribución', m4: '4 · ¿Sabías que?', m5: 'Fuentes' };
+ORDER.forEach((m, i) => { const nav = el('div', { class: 'modnav' });
+  nav.innerHTML = (i > 0 ? `<button data-go="${ORDER[i - 1]}">← ${NAMES[ORDER[i - 1]]}</button>` : '<span></span>') + (i < ORDER.length - 1 ? `<button class="next" data-go="${ORDER[i + 1]}">${NAMES[ORDER[i + 1]]} →</button>` : '');
+  document.getElementById(m).appendChild(nav); });
+document.addEventListener('click', e => { const b = e.target.closest('[data-go]'); if (b) show(b.dataset.go); });
+const tt = $('#toTop'); window.addEventListener('scroll', () => tt.classList.toggle('on', scrollY > 600), { passive: true }); tt.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
+$('nav.tabs').addEventListener('keydown', e => { if (!['ArrowRight', 'ArrowLeft'].includes(e.key)) return; const bs = $$('nav.tabs button'); const i = bs.indexOf(document.activeElement); if (i < 0) return; const n = bs[(i + (e.key === 'ArrowRight' ? 1 : bs.length - 1)) % bs.length]; n.focus(); show(n.dataset.m); });
 initTipTargets();
 let start = 'm0'; try { start = (location.hash || '#m0').slice(1); } catch (e) {}
 show(BUILD[start] || start === 'm5' ? start : 'm0');
